@@ -18,8 +18,10 @@ build:
 
 package:
   stage: package
+  dependencies:
+    - build
   extends: docker_build
   variables:
-    CUSTOM_REGISTRIES_DESTINATIONS: "--destination $CI_REGISTRY_IMAGE:"
+    CUSTOM_REGISTRIES_DESTINATIONS: "--destination $CI_REGISTRY_IMAGE:$TAG"
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
