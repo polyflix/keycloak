@@ -130,7 +130,7 @@
   
   <modules>
       
-    <module>keycloak-kakfa-producer</module>
+    <module>keycloak-kafka-producer</module>
       
   </modules>
 </project>
