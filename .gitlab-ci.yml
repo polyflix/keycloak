@@ -1,0 +1,4 @@
+include:
+  - project: 'polyflix-do/ci-templates'
+    file: '/templates/maven.yml'
+    ref: main
