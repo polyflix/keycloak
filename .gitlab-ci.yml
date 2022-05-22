@@ -2,3 +2,24 @@ include:
   - project: 'polyflix-do/ci-templates'
     file: '/templates/maven.yml'
     ref: main
+
+build:
+  stage: build
+  extends: .maven
+  script:
+    - mvn ${MAVEN_CLI_OPTS} clean package
+    - echo -e "TAG=$(cat Dockerfile | grep FROM | cut -d ':' -f2)" > build.env
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - "**/*/target/"
+    reports:
+      dotenv: build.env
+
+package:
+  stage: package
+  extends: docker_build
+  variables:
+    CUSTOM_REGISTRIES_DESTINATIONS: "--destination $CI_REGISTRY_IMAGE:"
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
