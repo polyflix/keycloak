@@ -17,7 +17,10 @@ public class KeycloakKafkaEventListener implements EventListenerProvider {
 
     @Override
     public void onEvent(Event event) {
-        if (event.getType() != EventType.REGISTER) return;
+        if (event.getType() != EventType.REGISTER) {
+            logger.warning("Ignoring event of type: " + event.getType());
+            return;
+        }
 
         // Build a user instance from the keycloak event
         User user = UserMapper.fromKeycloak(event.getUserId(), event.getDetails());
