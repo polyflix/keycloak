@@ -1,3 +1,4 @@
+import React from "react";
 import { memo } from "react";
 import { Template } from "keycloakify/lib/components/Template";
 import type { KcProps } from "keycloakify";

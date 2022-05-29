@@ -1,3 +1,4 @@
+import React from "react";
 import { memo } from "react";
 import { useDownloadTerms, kcMessages } from "keycloakify";
 import type { KcProps } from "keycloakify";

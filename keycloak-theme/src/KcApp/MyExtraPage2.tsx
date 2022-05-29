@@ -1,3 +1,4 @@
+import React from "react";
 import { memo } from "react";
 import type { KcProps } from "keycloakify";
 import type { KcContext } from "./kcContext";
