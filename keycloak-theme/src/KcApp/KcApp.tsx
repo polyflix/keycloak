@@ -1,26 +1,22 @@
-import React from "react";
-import { memo } from "react";
-import type { KcContext } from "./kcContext";
 import { defaultKcProps as props } from "keycloakify";
-import { Login } from "keycloakify/lib/components/Login";
-import { Register } from "./Register";
-import { Info } from "keycloakify/lib/components/Info";
 import { Error } from "keycloakify/lib/components/Error";
-import { Terms } from "./Terms";
-import { MyExtraPage1 } from "./MyExtraPage1";
-import { MyExtraPage2 } from "./MyExtraPage2";
+import { Info } from "keycloakify/lib/components/Info";
 import { KcApp as KcAppBase } from "keycloakify/lib/components/KcApp";
-import "./kcMessagesExtension";
+import React, { memo } from "react";
+import { RegisterPage } from "src/authentication/pages/Register.page";
+import { ResetPasswordPage } from "src/authentication/pages/ResetPassword.page";
+import { LoginPage } from "../authentication/pages/Login.page";
+import type { KcContext } from "./kcContext";
+import { Terms } from "./Terms";
 
 export const KcApp = memo(({ kcContext }: { kcContext: KcContext; }) => {
     switch (kcContext.pageId) {
-        case "login.ftl": return <Login {...{ kcContext, ...props }} />;
-        case "register.ftl": return <Register {...{ kcContext, ...props }} />;
+        case "login.ftl": return <LoginPage {...{ kcContext, ...props }} />;
+        case "register.ftl": return <RegisterPage {...{ kcContext, ...props }} />;
+        case "login-reset-password.ftl": return <ResetPasswordPage {...{ kcContext, ...props }} />;
         case "info.ftl": return <Info {...{ kcContext, ...props }} />;
         case "error.ftl": return <Error {...{ kcContext, ...props }} />;
         case "terms.ftl": return <Terms {...{ kcContext, ...props }} />;
-        case "my-extra-page-1.ftl": return <MyExtraPage1 {...{ kcContext, ...props }} />;
-        case "my-extra-page-2.ftl": return <MyExtraPage2 {...{ kcContext, ...props }} />;
         default: return <KcAppBase {...{ kcContext, ...props }} />;
     }
 });

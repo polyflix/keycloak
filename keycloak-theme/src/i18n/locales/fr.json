@@ -1,0 +1,120 @@
+{
+  "translation": {
+    "fields": {
+      "email": {
+        "label": "Adresse email",
+        "invalid": "L'adresse email n'est pas valide.",
+        "required": "L'adresse email est requise.",
+        "noMatch": "L'adresse email est incorrecte."
+      },
+      "firstName": {
+        "label": "Prénom",
+        "invalid": "Le prénom n'est pas valide.",
+        "required": "Le prénom est requis."
+      },
+      "lastName": {
+        "label": "Nom",
+        "invalid": "Le nom n'est pas valide.",
+        "required": "Le nom est requis."
+      },
+      "password": {
+        "label": {
+          "current": "Mot de passe actuel",
+          "new": "Nouveau mot de passe",
+          "confirm": "Confirmez le mot de passe"
+        },
+        "invalid": "Le mot de passe n'est pas valide.",
+        "required": "Le mot de passe est requis.",
+        "noMatch": "Les mots de passe sont différents.",
+        "updated": "Votre mot de passe a été mis à jour"
+      },
+      "minLength": "Ce champ doit avoir une longueur minimum de {{count}} caractères",
+      "maxLength": "Ce champ doit avoir une longueur maximum de {{count}} caractères",
+      "required": "Ce champ est requis"
+    },
+    "signIn": {
+      "title": "Connectez-vous à Polyflix",
+      "subtitle": "Entrez vos informations d'identification ci-dessous pour accéder à votre compte.",
+      "confirm": "Connexion",
+      "links": {
+        "resetPassword": "Mot de passe oublié ?"
+      },
+      "header": {
+        "links": {
+          "signUp": {
+            "label": "Vous n'avez pas de compte ?",
+            "link": "Commencez"
+          }
+        }
+      },
+      "sidebar": {
+        "title": "Faites moins, apprenez plus.",
+        "description": "Avec la plateforme web Polyflix, suivez vos cours, téléchargez des conférences, obtenez des certifications, tout au même endroit, pour vous et votre école.",
+        "cta": "Plus d'informations"
+      }
+    },
+    "validate": {
+      "title": "C'est l'heure de lire vos emails !",
+      "validating_title": "Nous sommes en train de valider votre compte...",
+      "subtitle": "Votre compte est désormais créé, il vous reste une seule étape avant de commencer.<br><br> Cliquez sur <bold>le lien</bold> dans l'email reçu et vous pourrez naviguer dans Polyflix.",
+      "confirm": "Vous ne l'avez pas reçu ?",
+      "confirmed": "Votre lien de vérification est parti !",
+      "header": {
+        "links": {
+          "signOut": {
+            "label": "Envie de reprendre depuis le début ? ",
+            "link": "Déconnexion"
+          }
+        }
+      }
+    },
+    "signUp": {
+      "title": "Démarrez sur Polyflix",
+      "subtitle": "Entrez vos coordonnées ci-dessous pour créer votre compte Polyflix.",
+      "confirm": "S'incrire",
+      "header": {
+        "links": {
+          "login": {
+            "label": "Vous avez déjà un compte? ",
+            "link": "Connexion"
+          }
+        }
+      },
+      "termsOfService": {
+        "label": "En m'inscrivant, j'accepte les ",
+        "link": "Conditions d'utilisation"
+      },
+      "sidebar": {
+        "title": "Tout au même endroit.",
+        "description": "Entraînez-vous avec des quiz, prenez des notes, regardez des vidéos, partagez vos commentaires sur les cours et bien plus encore avec un compte Polyflix.",
+        "cta": "Plus d'informations"
+      }
+    },
+    "resetPassword": {
+      "request": {
+        "title": "Mot de passe oublié ?",
+        "subtitle": "Veuillez saisir l'adresse email associée à votre compte et nous vous enverrons un lien pour réinitialiser votre mot de passe.",
+        "confirm": "Réinitialiser le mot de passe",
+        "back": "Retour",
+        "sent": "Si un compte existe avec cette adresse, alors un email vient d'être envoyé"
+      },
+      "resetForm": {
+        "title": "Récupération de mot de passe",
+        "subtitle": "Entrez votre nouveau mot de passe ci-dessous, et vous serez prêt pour revenir sur Polyflix !",
+        "confirm": "Valider",
+        "footer": "Se connecter"
+      }
+    },
+    "cookie": {
+      "title": "Accepter les cookies sur ce navigateur",
+      "description": "On est des gentils, on utilise que des gentils cookies alors acceptez-les (ça serait triste de ne pas accéder à ce site incroyable)",
+      "accept": "Accepter les cookies"
+    },
+    "navbar": {
+      "actions": {
+        "language": "Langue",
+        "bugReport": "Signaler un bug"
+      }
+    }
+  }
+}
