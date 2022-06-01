@@ -2,8 +2,7 @@ package fr.polyflix.model;
 
 import java.util.UUID;
 
-public class User{
-    public UUID id;
+public class User extends UserModel {
     public String email;
     public String username;
     public String firstName;
@@ -11,7 +10,7 @@ public class User{
 
 
     public User(String id, String email, String username, String firstName, String lastName) {
-        this.id = UUID.fromString(id);
+        super(id);
         this.email = email;
         this.username = username;
         this.firstName = firstName;
