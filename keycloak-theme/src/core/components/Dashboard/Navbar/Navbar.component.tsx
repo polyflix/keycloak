@@ -1,18 +1,16 @@
-import { Stack } from '@mui/material'
-import Box from '@mui/material/Box'
-import React, { PropsWithChildren } from 'react'
-import { useSidebar } from '../../../hooks/useSidebar.hook'
-import { BugReport } from '../../BugReport/BugReport.component'
-import { Icon } from '../../Icon/Icon.component'
-import { LanguageButton } from '../../LanguageButton/LanguageButton.component'
-import { Logo } from '../../Logo/Logo.component'
-import { ThemeButton } from '../../ThemeButton/ThemeButton.component'
-import { RootStyle, ToolbarStyle } from './Navbar.style'
-
-
+import { Stack } from "@mui/material";
+import Box from "@mui/material/Box";
+import React, { PropsWithChildren } from "react";
+import { useSidebar } from "../../../hooks/useSidebar.hook";
+import { BugReport } from "../../BugReport/BugReport.component";
+import { Icon } from "../../Icon/Icon.component";
+import { LanguageButton } from "../../LanguageButton/LanguageButton.component";
+import { Logo } from "../../Logo/Logo.component";
+import { ThemeButton } from "../../ThemeButton/ThemeButton.component";
+import { RootStyle, ToolbarStyle } from "./Navbar.style";
 
 export const DashboardNavbar: React.FC<PropsWithChildren<{}>> = ({}) => {
-  const { open, toggle } = useSidebar()
+  const { open, toggle } = useSidebar();
 
   return (
     <RootStyle open={open}>
@@ -21,14 +19,14 @@ export const DashboardNavbar: React.FC<PropsWithChildren<{}>> = ({}) => {
           onClick={() => toggle()}
           sx={{
             display: {
-              md: 'none',
-              sm: 'flex',
+              md: "none",
+              sm: "flex",
             },
-            color: 'grey.600',
-            alignItems: 'center',
-            justifyContent: 'center',
+            color: "grey.600",
+            alignItems: "center",
+            justifyContent: "center",
             marginRight: 2,
-            cursor: 'pointer',
+            cursor: "pointer",
           }}
         >
           <Icon name="eva:menu-fill" />
@@ -48,8 +46,8 @@ export const DashboardNavbar: React.FC<PropsWithChildren<{}>> = ({}) => {
           <Box
             sx={{
               display: {
-                sm: 'block',
-                xs: 'none',
+                sm: "block",
+                xs: "none",
               },
             }}
           >
@@ -58,5 +56,5 @@ export const DashboardNavbar: React.FC<PropsWithChildren<{}>> = ({}) => {
         </Stack>
       </ToolbarStyle>
     </RootStyle>
-  )
-}
+  );
+};

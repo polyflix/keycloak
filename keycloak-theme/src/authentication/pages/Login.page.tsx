@@ -1,4 +1,4 @@
-import { Button, Link, Typography } from "@mui/material";
+import { Link, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import { KcProps } from "keycloakify";
 import { memo } from "react";
@@ -6,11 +6,11 @@ import { useTranslation } from "react-i18next";
 import { KcContext } from "../../KcApp/kcContext";
 import { LoginForm } from "../components/Forms/LoginForm.component";
 import { MHidden } from "../components/MHidden/MHidden.component";
+import { Presentation } from "../components/Presentation/Presentation.component";
 import { AuthLayout } from "../layouts/Auth.layout";
 import {
   ContentAuthStyle,
-  RootAuthStyle,
-  SectionAuthStyle
+  RootAuthStyle
 } from "../styles/Auth.style";
 
 export type KcContext_Login = Extract<KcContext, { pageId: "login.ftl" }>;
@@ -35,17 +35,7 @@ export const LoginPage = memo(
           </Link>
         </AuthLayout>
 
-        <MHidden width="mdDown">
-          <SectionAuthStyle>
-            <Typography variant="h3">{t("signIn.sidebar.title")}</Typography>
-            <Typography sx={{ color: "text.secondary", my: 3 }}>
-              {t("signIn.sidebar.description")}
-            </Typography>
-            <Button sx={{ py: 1 }} fullWidth variant="outlined">
-              {t("signIn.sidebar.cta")}
-            </Button>
-          </SectionAuthStyle>
-        </MHidden>
+        <Presentation />
 
         <Container maxWidth="sm">
           <ContentAuthStyle>
