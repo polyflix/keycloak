@@ -36,6 +36,8 @@
       "title": "Sign in to Polyflix",
       "subtitle": "Enter your credentials below to access to your account.",
       "confirm": "Login",
+      "oauth": "Or sign in with",
+      "error": "Invalid email or password",
       "links": {
         "resetPassword": "Forgot password?"
       },
@@ -56,8 +58,12 @@
     "validate": {
       "title": "Time to read your mails!",
       "validating_title": "We are validating your account...",
-      "subtitle": "Your account is now created, you have one step left in order to access our platform.<br><br> An e-mail has been send in order to verify your account, <bold>click on the link</bold> in the mail and you'll be done!",
-      "confirm": "Didn't receive it ?",
+      "subtitle": "Your account is now created, you have one step left in order to access our platform",
+      "description": "An e-mail has been sent to your address {{ email }} in order to verify your account, <bold>click on the link</bold> in the mail and you'll be done!",
+      "resend": {
+        "description": "Haven't received a verification code in your email? ",
+        "link": "Click here to re-send the email."
+      },
       "confirmed": "Your mail is on the way!",
       "header": {
         "links": {
@@ -115,6 +121,11 @@
         "language": "Language",
         "bugReport": "Report a bug"
       }
+    },
+    "errors": {
+      "title": "Error",
+      "back": "Back to home page",
+      "description": "An error has occurred"
     }
   }
 }

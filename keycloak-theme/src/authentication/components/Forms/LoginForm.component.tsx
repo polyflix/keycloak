@@ -1,13 +1,18 @@
+import GoogleIcon from "@mui/icons-material/Google";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { LoadingButton } from "@mui/lab";
 import {
   Alert,
+  Divider,
   IconButton,
   InputAdornment,
   Link,
+  List,
+  ListItem,
   Stack,
-  TextField
+  TextField,
+  Typography
 } from "@mui/material";
 import { KcContextBase, KcProps } from "keycloakify";
 import React, { memo, useState } from "react";
@@ -24,7 +29,8 @@ import { ILoginForm } from "../../types/form.type";
 export const LoginForm = memo(
   ({ kcContext, ...props }: { kcContext: KcContextBase.Login } & KcProps) => {
     const { t } = useTranslation();
-    const { url } = kcContext;
+    const { url, social } = kcContext;
+    console.log(social.providers);
 
     // A boolean to track if the user has activated the password visibility
     const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -35,10 +41,7 @@ export const LoginForm = memo(
     } = useForm<ILoginForm>();
 
     return (
-      <form
-        action={url.loginAction}
-        method="post"
-      >
+      <form action={url.loginAction} method="post">
         <Stack spacing={3}>
           {kcContext.message && kcContext.message.type === "error" && (
             <Alert severity="error">{kcContext.message.summary}</Alert>
@@ -104,6 +107,48 @@ export const LoginForm = memo(
           >
             {t("signIn.confirm")}
           </LoadingButton>
+
+          {social.providers && (
+            <>
+              <Divider />
+
+              <Typography sx={{ color: "text.secondary" }} align="center">
+                {t("signIn.oauth")}
+              </Typography>
+
+              <List>
+                {social.providers.map((p) => (
+                  <ListItem>
+                    {p.displayName
+                      .toLocaleLowerCase()
+                      .replace(/ /g, "")
+                      .includes("google") ? (
+                      <LoadingButton
+                        fullWidth
+                        size="large"
+                        variant="outlined"
+                        startIcon={<GoogleIcon />}
+                        color="inherit"
+                        href={p.loginUrl}
+                      >
+                        Google
+                      </LoadingButton>
+                    ) : (
+                      <LoadingButton
+                        fullWidth
+                        size="large"
+                        variant="outlined"
+                        color="inherit"
+                        href={p.loginUrl}
+                      >
+                        {p.displayName}
+                      </LoadingButton>
+                    )}
+                  </ListItem>
+                ))}
+              </List>
+            </>
+          )}
         </Stack>
       </form>
     );

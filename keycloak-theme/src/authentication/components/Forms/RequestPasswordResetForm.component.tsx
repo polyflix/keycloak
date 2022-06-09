@@ -80,7 +80,7 @@ export const RequestPasswordResetForm = memo(
               {t("resetPassword.request.confirm")}
             </LoadingButton>
 
-            <Button href="/" sx={{ marginTop: "10px" }} fullWidth size="large">
+            <Button href={url.loginUrl} sx={{ marginTop: "10px" }} fullWidth size="large">
               {t("resetPassword.request.back")}
             </Button>
           </Stack>

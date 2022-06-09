@@ -1,11 +1,11 @@
-import { styled, Box } from '@mui/material'
+import { Box, styled } from '@mui/material'
 
-export const ErrorRootStyle = styled(Box)<any>(({ theme, isPage }) => ({
+export const ErrorRootStyle = styled(Box)<any>(({ theme }) => ({
   display: 'flex',
   width: '100%',
   alignItems: 'center',
   justifyContent: 'center',
   overflow: 'hidden',
-  height: isPage ? '100vh' : '100%',
+  height: '100vh',
   padding: theme.spacing(1),
 }))

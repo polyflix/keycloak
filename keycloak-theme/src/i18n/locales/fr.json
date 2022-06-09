@@ -36,6 +36,8 @@
       "title": "Connectez-vous à Polyflix",
       "subtitle": "Entrez vos informations d'identification ci-dessous pour accéder à votre compte.",
       "confirm": "Connexion",
+      "oauth": "Ou se connecter avec",
+      "error": "Email ou mot de passe invalide",
       "links": {
         "resetPassword": "Mot de passe oublié ?"
       },
@@ -56,8 +58,12 @@
     "validate": {
       "title": "C'est l'heure de lire vos emails !",
       "validating_title": "Nous sommes en train de valider votre compte...",
-      "subtitle": "Votre compte est désormais créé, il vous reste une seule étape avant de commencer.<br><br> Cliquez sur <bold>le lien</bold> dans l'email reçu et vous pourrez naviguer dans Polyflix.",
-      "confirm": "Vous ne l'avez pas reçu ?",
+      "subtitle": "Votre compte est désormais créé, il vous reste une seule étape avant de commencer.",
+      "description": "Cliquez sur <bold>le lien</bold> dans l'email reçu à l'adresse {{ email }} et vous pourrez naviguer dans Polyflix.",
+      "resend": {
+        "description": "Vous n'avez pas reçu de code de vérification dans votre messagerie?",
+        "link": "Cliquez ici pour renvoyer l'e-mail."
+      },
       "confirmed": "Votre lien de vérification est parti !",
       "header": {
         "links": {
@@ -115,6 +121,11 @@
         "language": "Langue",
         "bugReport": "Signaler un bug"
       }
+    },
+    "errors": {
+      "title": "Erreur",
+      "back": "Retour à l'accueil",
+      "description": "Une erreur est survenue"
     }
   }
 }

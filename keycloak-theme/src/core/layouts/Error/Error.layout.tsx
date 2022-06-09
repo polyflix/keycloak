@@ -1,73 +1,42 @@
-/* eslint-disable no-restricted-globals */
-import { Box, Button, Stack, Typography } from '@mui/material'
-import { useTranslation } from 'react-i18next'
-import { Link as RouterLink } from 'react-router-dom'
-import { Icon } from '../../components/Icon/Icon.component'
-import { Logo } from '../../components/Logo/Logo.component'
-import { HeaderBaseStyle } from '../../styles/HeaderBase.style'
-import { ErrorRootStyle } from './Error.style'
-
-
-
-interface Props {
-  code: any
-  isPage?: boolean
-}
+import { Box, Button, Stack, Typography } from "@mui/material";
+import { KcContextBase, KcProps } from "keycloakify";
+import { memo } from "react";
+import { useTranslation } from "react-i18next";
+import { AuthLayout } from "src/authentication/layouts/Auth.layout";
+import { ErrorRootStyle } from "./Error.style";
 
 // This component builds a common error layout to display on error pages.
-export const ErrorLayout = ({ code, isPage = false }: Props) => {
-  const { t } = useTranslation('errors')
+export const ErrorLayout = memo(
+  ({ kcContext, ...props }: { kcContext: KcContextBase.Error } & KcProps) => {
+    const { t } = useTranslation();
+    const { url } = kcContext;
 
-  const titleKey = `${code}.title`
-  const descriptionKey = `${code}.description`
-  const ctaKey = `${code}.cta`
+    return (
+      <ErrorRootStyle>
+        <AuthLayout />
 
-  const getCallToAction = () => {
-    const commonProps: any = {
-      variant: 'outlined',
-      size: 'large',
-    }
-    switch (code) {
-      case 503:
-        return (
-          <Button
-            onClick={() => location.reload()}
-            startIcon={<Icon name="ion:refresh-outline" />}
-            {...commonProps}
-          >
-            {t(ctaKey)}
-          </Button>
-        )
-      case 404:
-        return (
-          <Button to="/" component={RouterLink} {...commonProps}>
-            {t(ctaKey)}
-          </Button>
-        )
-      default:
-        return <></>
-    }
+        <Stack direction="column" justifyContent="center" alignItems="center">
+          <Typography align="center" fontWeight="bold" fontSize="100px">
+            {t("errors.title")}
+          </Typography>
+          <Typography align="center" sx={{ color: "text.secondary" }}>
+            {kcContext.message && kcContext.message.type === "error"
+              ? kcContext.message.summary
+              : t("errors.description")}
+          </Typography>
+          <Box sx={{ py: 3 }}>
+            <Button
+              href={url.loginUrl}
+              sx={{ marginTop: "10px" }}
+              fullWidth
+              size="large"
+              variant="contained"
+            >
+              {t("errors.back")}
+            </Button>
+          </Box>
+        </Stack>
+      </ErrorRootStyle>
+    );
   }
-
-  return (
-    <ErrorRootStyle isPage={isPage}>
-      {isPage && (
-        <HeaderBaseStyle>
-          <Logo />
-        </HeaderBaseStyle>
-      )}
-      <Stack direction="column" justifyContent="center" alignItems="center">
-        <Typography align="center" fontWeight="bold" fontSize="100px">
-          {code}
-        </Typography>
-        <Typography align="center" sx={{ my: 2 }} variant="h3">
-          {t(titleKey)}
-        </Typography>
-        <Typography align="center" sx={{ color: 'text.secondary' }}>
-          {t(descriptionKey)}
-        </Typography>
-        <Box sx={{ py: 3 }}>{getCallToAction()}</Box>
-      </Stack>
-    </ErrorRootStyle>
-  )
-}
+);
