@@ -16,8 +16,6 @@ export interface IRequestResetPasswordForm {
 }
 
 export interface IResetPasswordForm {
-  email: string
-  token: string
-  password: string
-  passwordRepeat: string
+  "password-new": string
+  "password-confirm": string
 }
