@@ -1,22 +1,16 @@
 import { Container } from "@mui/material";
-import { KcProps } from "keycloakify";
+import { KcContextBase, KcProps } from "keycloakify";
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
-import { KcContext } from "../../KcApp/kcContext";
 import { RequestPasswordResetForm } from "../components/Forms/RequestPasswordResetForm.component";
 import { AuthLayout } from "../layouts/Auth.layout";
 import { ContentAuthStyle, RootAuthStyle } from "../styles/Auth.style";
-
-type KcContext_ResetPassword = Extract<
-  KcContext,
-  { pageId: "login-reset-password.ftl" }
->;
 
 export const ResetPasswordPage = memo(
   ({
     kcContext,
     ...props
-  }: { kcContext: KcContext_ResetPassword } & KcProps) => {
+  }: { kcContext: KcContextBase.LoginResetPassword } & KcProps) => {
     const { t } = useTranslation();
     return (
       <RootAuthStyle
@@ -27,7 +21,7 @@ export const ResetPasswordPage = memo(
         <AuthLayout />
         <Container>
           <ContentAuthStyle>
-            <RequestPasswordResetForm />
+            <RequestPasswordResetForm {...{ kcContext, ...props }} />
           </ContentAuthStyle>
         </Container>
       </RootAuthStyle>

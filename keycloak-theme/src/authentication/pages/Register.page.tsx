@@ -46,7 +46,7 @@ export const RegisterPage = memo(
               </Typography>
             </Box>
 
-            <RegisterForm />
+            <RegisterForm {...{ kcContext, ...props }} />
 
             <Typography
               variant="body2"

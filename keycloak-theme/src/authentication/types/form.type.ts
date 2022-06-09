@@ -1,16 +1,18 @@
 export interface ILoginForm {
-  email: string
+  username: string
   password: string
 }
 
-export interface IRegisterForm extends ILoginForm {
+export interface IRegisterForm {
+  email: string
   firstName: string
   lastName: string
-  passwordConfirm: string
+  password: string
+  "password-confirm": string
 }
 
 export interface IRequestResetPasswordForm {
-  email: string
+  username: string
 }
 
 export interface IResetPasswordForm {

@@ -1,22 +1,16 @@
 import { Link, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
-import { KcProps } from "keycloakify";
+import { KcContextBase, KcProps } from "keycloakify";
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
-import { KcContext } from "../../KcApp/kcContext";
 import { LoginForm } from "../components/Forms/LoginForm.component";
 import { MHidden } from "../components/MHidden/MHidden.component";
 import { Presentation } from "../components/Presentation/Presentation.component";
 import { AuthLayout } from "../layouts/Auth.layout";
-import {
-  ContentAuthStyle,
-  RootAuthStyle
-} from "../styles/Auth.style";
-
-export type KcContext_Login = Extract<KcContext, { pageId: "login.ftl" }>;
+import { ContentAuthStyle, RootAuthStyle } from "../styles/Auth.style";
 
 export const LoginPage = memo(
-  ({ kcContext, ...props }: { kcContext: KcContext_Login } & KcProps) => {
+  ({ kcContext, ...props }: { kcContext: KcContextBase.Login } & KcProps) => {
     // Get the translation from the auth namespace
     const { t } = useTranslation();
     const { url } = kcContext;

@@ -1,2 +1,2 @@
-FROM bitnami/keycloak:18.0.0
-COPY ./keycloak-kafka-producer/target/keycloak-spi-kafka.jar /opt/bitnami/keycloak/providers/
+FROM gitlab.polytech.umontpellier.fr:5050/polyflix-do/keycloak:18.0.0
+COPY --chown=keycloak:keycloak ./keycloak-theme/build_keycloak/src/main/resources/theme/polyflix /opt/bitnami/keycloak/themes/polyflix

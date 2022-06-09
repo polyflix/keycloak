@@ -1,7 +1,7 @@
 import { Button, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { SHOWCASE_URL } from "src/authentication/constants/authentication.constant";
-import { SectionAuthStyle } from "src/authentication/styles/Auth.style";
+import { SHOWCASE_URL } from "../../constants/authentication.constant";
+import { SectionAuthStyle } from "../../styles/Auth.style";
 import { MHidden } from "../MHidden/MHidden.component";
 
 export const Presentation = () => {
