@@ -45,6 +45,7 @@ export const RegisterForm = memo(
 
           <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
             <TextField
+              autoFocus
               fullWidth
               label={t("fields.firstName.label")}
               {...register("firstName", {

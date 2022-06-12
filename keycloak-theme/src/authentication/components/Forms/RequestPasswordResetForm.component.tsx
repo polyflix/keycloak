@@ -51,6 +51,7 @@ export const RequestPasswordResetForm = memo(
 
             <TextField
               fullWidth
+              autoFocus
               variant="outlined"
               error={!isUndefined(errors.username)}
               helperText={errors.username?.message}

@@ -1,5 +1,8 @@
 {
   "translation": {
+    "global": {
+      "logo": "Back to home page"
+    },
     "fields": {
       "email": {
         "label": "Email address",
@@ -38,8 +41,12 @@
       "confirm": "Login",
       "oauth": "Or sign in with",
       "error": "Invalid email or password",
+      "warning": {
+        "title": "New version of Polyflix",
+        "description": "If you already have an account with Polyflix, please reset your password the first time you log in by clicking the <strong> Forgot your password? </strong> link below. We apologize for the inconvenience."
+      },
       "links": {
-        "resetPassword": "Forgot password?"
+        "resetPassword": "Forgot your password?"
       },
       "header": {
         "links": {

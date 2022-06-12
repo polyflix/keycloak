@@ -2,11 +2,11 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { LoadingButton } from "@mui/lab";
 import {
-    Alert,
-    IconButton,
-    InputAdornment,
-    Stack,
-    TextField
+  Alert,
+  IconButton,
+  InputAdornment,
+  Stack,
+  TextField
 } from "@mui/material";
 import { KcContextBase, KcProps } from "keycloakify";
 import { memo, useRef, useState } from "react";
@@ -43,6 +43,7 @@ export const UpdatePasswordForm = memo(
           )}
 
           <TextField
+            autoFocus
             fullWidth
             type={showPassword ? "text" : "password"}
             label={t("fields.password.label.new")}

@@ -1,22 +1,20 @@
 import { Box, Link, Stack, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { kcContext } from "../../../KcApp/kcContext";
 import { APP_NAME } from "../../constants/app.constant";
 
-interface Props {
-  minimal?: boolean;
-}
-
-export const Logo = ({ minimal = false }: Props) => {
-  const { t } = useTranslation("home");
+export const Logo = () => {
+  const { t } = useTranslation();
   return (
     <Stack direction="row" alignItems="center">
-      <Link href="/" underline="none">
+      <Link href={kcContext?.url.loginUrl} underline="none">
         <Typography
-          title={t("page.title")}
+          title={t("global.logo")}
           sx={{ color: "text.primary", cursor: "pointer" }}
           variant="h3"
+          component="h1"
         >
-          {minimal ? APP_NAME[0] : APP_NAME}
+          {APP_NAME}
         </Typography>
       </Link>
       <Box

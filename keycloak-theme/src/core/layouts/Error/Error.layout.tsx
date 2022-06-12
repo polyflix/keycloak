@@ -2,7 +2,7 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 import { KcContextBase, KcProps } from "keycloakify";
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
-import { AuthLayout } from "src/authentication/layouts/Auth.layout";
+import { AuthLayout } from "../../../authentication/layouts/Auth.layout";
 import { ErrorRootStyle } from "./Error.style";
 
 // This component builds a common error layout to display on error pages.

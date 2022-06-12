@@ -4,6 +4,7 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { LoadingButton } from "@mui/lab";
 import {
   Alert,
+  AlertTitle,
   Divider,
   IconButton,
   InputAdornment,
@@ -17,7 +18,7 @@ import {
 import { KcContextBase, KcProps } from "keycloakify";
 import React, { memo, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { Regex } from "../../../core/constants/regex.constant";
 import { ILoginForm } from "../../types/form.type";
 
@@ -48,6 +49,7 @@ export const LoginForm = memo(
           )}
           <TextField
             fullWidth
+            autoFocus
             label={t("fields.email.label")}
             {...register("username", {
               required: {
@@ -94,6 +96,16 @@ export const LoginForm = memo(
             id="password"
             name="password"
           />
+
+          <Alert severity="warning">
+            <AlertTitle>{t("signIn.warning.title")}</AlertTitle>
+            <Trans
+                i18nKey={"signIn.warning.description"}
+                components={{
+                  bold: <strong />,
+                }}
+              />
+          </Alert>
 
           <Link underline="hover" href={url.loginResetCredentialsUrl}>
             {t("signIn.links.resetPassword")}
