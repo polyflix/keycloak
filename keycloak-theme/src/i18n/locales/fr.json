@@ -33,7 +33,11 @@
       },
       "minLength": "Ce champ doit avoir une longueur minimum de {{count}} caractères",
       "maxLength": "Ce champ doit avoir une longueur maximum de {{count}} caractères",
-      "required": "Ce champ est requis"
+      "required": "Ce champ est requis",
+      "hasUpperCase": "Ce champ doit contenir au moins une majuscule",
+      "hasLowerCase": "Ce champ doit contenir au moins une minuscule",
+      "hasNumber": "Ce champ doit contenir au moins un chiffre",
+      "hasSpecialCharacter": "Ce champ doit contenir au moins un caractère spécial"
     },
     "signIn": {
       "title": "Connectez-vous à Polyflix",

@@ -33,7 +33,11 @@
       },
       "minLength": "It must be at least {{count}} characters",
       "maxLength": "It must have a maximum length of {{count}} characters",
-      "required": "This field is required"
+      "required": "This field is required",
+      "hasUpperCase": "It must contain at least one uppercase letter",
+      "hasLowerCase": "It must contain at least one lowercase letter",
+      "hasNumber": "It must contain at least one number",
+      "hasSpecialChar": "It must contain at least one special character"
     },
     "signIn": {
       "title": "Sign in to Polyflix",

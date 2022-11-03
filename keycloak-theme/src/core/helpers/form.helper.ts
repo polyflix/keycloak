@@ -37,6 +37,12 @@ export const buildPasswordValidation = () => ({
   },
   maxLength: {
     value: 64,
-    message: i18n.t('fields.maxLength', { count: 8 }),
+    message: i18n.t('fields.maxLength', { count: 64 }),
   },
+  validate: {
+    hasUpperCase: (v: string) => v.toLowerCase() !== v ? true : i18n.t('fields.hasUpperCase'),
+    hasLowerCase: (v: string) => v.toUpperCase() !== v ? true : i18n.t('fields.hasLowerCase'),
+    hasSpecialChar: (v: string) => /[ `!@#$%^&*()_+\-=\]{};':"\\|,.<>?~]/.test(v) ? true : i18n.t('fields.hasSpecialChar'),
+    hasNumber: (v: string) => /\d/.test(v) ? true : i18n.t('fields.hasNumber'),
+  }
 })
