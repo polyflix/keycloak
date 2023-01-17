@@ -97,16 +97,6 @@ export const LoginForm = memo(
             name="password"
           />
 
-          <Alert severity="warning">
-            <AlertTitle>{t("signIn.warning.title")}</AlertTitle>
-            <Trans
-                i18nKey={"signIn.warning.description"}
-                components={{
-                  bold: <strong />,
-                }}
-              />
-          </Alert>
-
           <Link underline="hover" href={url.loginResetCredentialsUrl}>
             {t("signIn.links.resetPassword")}
           </Link>
