@@ -45,10 +45,6 @@
       "confirm": "Connexion",
       "oauth": "Ou se connecter avec",
       "error": "Email ou mot de passe invalide",
-      "warning": {
-        "title": "Nouvelle version de Polyflix",
-        "description": "Si vous aviez déjà un compte sur Polyflix, lors de votre première connexion veuillez réinitialiser votre mot de passe en cliquant sur le lien <strong>Mot de passe oublié ?</strong> ci-dessous. Nous sommes désolés pour la gêne occasionnée."
-      },
       "links": {
         "resetPassword": "Mot de passe oublié ?"
       },
